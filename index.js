@@ -78,6 +78,12 @@ const refreshDisplay = message =>
                 Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
                 '192.168.177.777:3000');
 
+            img.alphaBlending(1);
+            img.saveAlpha(1);
+
+// copy watermark onto input, i.e. onto the destination
+            img.copy(qr, 0, 0, 0, 0, 100, 100);
+
             // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
             //
             // // // Center the message
@@ -104,7 +110,7 @@ const refreshDisplay = message =>
 
 
 
-            return epd.displayImageBuffer(qr)
+            return epd.displayImageBuffer(img)
         }))
         .then(() => epd.sleep())
 
