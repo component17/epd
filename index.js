@@ -20,9 +20,9 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(async img => {
 
-            let qr = await gd.createFromPng('./qr.png');
-
-            img.copy(qr, 0, 0, 0, 0, 100, 100);
+            // let qr = await gd.createFromPng('./qr.png');
+            //
+            // img.copy(qr, 0, 0, 0, 0, 100, 100);
 
 
             // display a black rectangle
