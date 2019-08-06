@@ -44,7 +44,7 @@ const refreshDisplay = message =>
             let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.black, font, 24, 0, 0, 0, 'Light Sorting');
 
             // // Center the message
-            img.stringFT(epd.colors.black, font, fontSize, 0,
+            img.stringFT(epd.colors.black, font, 24, 0,
                 Math.round(width / 2 - (xur - xul) / 2 + 43),
                 Math.round(height / 2 + (yll - yul) / 2),
                 'Light Sorting');
