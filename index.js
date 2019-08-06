@@ -18,10 +18,10 @@ const refreshDisplay = message =>
             img.filledRectangle(0, 122, 56, 176, epd.colors.black);
 
             // display a red rectangle
-            img.filledRectangle(
-                Math.round(width / 4), Math.round(height / 4),
-                Math.round(3 * width / 4), Math.round(3 * height / 4),
-                epd.colors.red)
+            // img.filledRectangle(
+            //     Math.round(width / 4), Math.round(height / 4),
+            //     Math.round(3 * width / 4), Math.round(3 * height / 4),
+            //     epd.colors.red)
 
             // Retrieve bounding box of displayed string
             let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.white, font, fontSize, 0, 0, 0, message)
