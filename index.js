@@ -17,7 +17,7 @@ const refreshDisplay = message =>
 
             img.stringFT(epd.colors.black, font, 24, 0,
                 5,
-                25,
+                27,
                 'i');
 
 
