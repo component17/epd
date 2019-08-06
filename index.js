@@ -45,7 +45,7 @@ const refreshDisplay = message =>
 
             // // Center the message
             img.stringFT(epd.colors.black, font, 24, 0,
-                Math.round(width / 2 - (xur - xul) / 2 + 5),
+                Math.round(width / 2 - (xur - xul) / 2 + 21),
                 Math.round(height / 2 + (yll - yul) / 2),
                 'Light Sorting');
 
