@@ -52,7 +52,7 @@ const refreshDisplay = message =>
                 Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 35),
                 'Light Sorting');
 
-            let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, '192.168.1.77:3000');
+            let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, '192.168.177.777:3000');
 
             // // Center the message
             img.stringFT(epd.colors.black, font, 18, 0,
