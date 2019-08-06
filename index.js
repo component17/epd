@@ -13,20 +13,9 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: false}))
         .then(() => img.then(img => {
             // display a black rectangle
-            img.filledRectangle(
-                Math.round(0), Math.round(0),
-                Math.round(56), Math.round(56),
-                epd.colors.black)
-
-            img.filledRectangle(
-                Math.round(0), Math.round(61),
-                Math.round(56), Math.round(56),
-                epd.colors.white)
-
-            img.filledRectangle(
-                Math.round(0), Math.round(122),
-                Math.round(56), Math.round(56),
-                epd.colors.white)
+            img.filledRectangle(0, 0, 56, 56, epd.colors.black);
+            img.filledRectangle(0, 61, 56, 118, epd.colors.black);
+            img.filledRectangle(0, 122, 56, 176, epd.colors.black);
 
             // display a red rectangle
             img.filledRectangle(
