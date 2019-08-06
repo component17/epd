@@ -29,9 +29,15 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(async img => {
 
-            let qr = await getPng();
+            try{
+                let qr = await getPng();
 
-            console.log(qr);
+                console.log(qr);
+            }catch (e) {
+                return e
+            }
+
+
 
 
             // display a black rectangle
@@ -82,7 +88,7 @@ const refreshDisplay = message =>
             img.saveAlpha(1);
 
 // copy watermark onto input, i.e. onto the destination
-            img.copy(qr, 0, 0, 0, 0, 100, 100);
+            //img.copy(qr, 0, 0, 0, 0, 100, 100);
 
             // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
             //
