@@ -31,6 +31,8 @@ const refreshDisplay = message =>
 
             let qr = await getPng();
 
+            console.log(qr);
+
 
             // display a black rectangle
             img.rectangle(1, 1, 43, 45, epd.colors.black);
