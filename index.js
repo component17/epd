@@ -4,6 +4,7 @@ const mdi = '/home/pi/epd/fonts/mdi.ttf';
 const roboto = '/home/pi/epd/fonts/Roboto-Regular.ttf';
 const rubikB = '/home/pi/epd/fonts/Rubik-Bold.ttf';
 const rubikR = '/home/pi/epd/fonts/Rubik-Regular.ttf';
+const qr = '/home/pi/epd/fonts/qr.ttf';
 const fontSize = 50
 
 const img = epd.getImageBuffer('landscape');
@@ -44,37 +45,37 @@ const refreshDisplay = message =>
                 '連');
 
             // Retrieve bounding box of displayed string
-            let box1 = img.stringFTBBox(epd.colors.black, font, 22, 0, 0, 0, 'Light Sorting');
+            // let box1 = img.stringFTBBox(epd.colors.black, font, 22, 0, 0, 0, 'Light Sorting');
+            //
+            // // // Center the message
+            // img.stringFT(epd.colors.black, font, 22, 0,
+            //     Math.round(width / 2 - (box1[4] - box1[6]) / 2 + 25),
+            //     Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 60),
+            //     'Light Sorting');
+
+            let box2 = img.stringFTBBox(epd.colors.black, qr, 18, 0, 0, 0, 'http://192.168.177.777:3000');
 
             // // Center the message
-            img.stringFT(epd.colors.black, font, 22, 0,
-                Math.round(width / 2 - (box1[4] - box1[6]) / 2 + 25),
-                Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 60),
-                'Light Sorting');
-
-            let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, '192.168.177.777');
-
-            // // Center the message
-            img.stringFT(epd.colors.black, font, 18, 0,
+            img.stringFT(epd.colors.black, qr, 18, 0,
                 Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
                 Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
-                '192.168.177.777');
+                '192.168.177.777:3000');
 
-            let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
-
-            // // Center the message
-            img.stringFT(epd.colors.black, font, 18, 0,
-                Math.round(width / 2 - (box4[4] - box4[6]) / 2 + 25),
-                Math.round(height / 2 + (box4[1] - box4[7]) / 2 + 25),
-                'Port: 3000');
-
-            let box3 = img.stringFTBBox(epd.colors.black, rubikR, 12, 0, 0, 0, 'Powered by Component17');
-
-            // // Center the message
-            img.stringFT(epd.colors.black, rubikR, 12, 0,
-                Math.round(width / 2 - (box3[4] - box3[6]) / 2 + 25),
-                Math.round(height / 2 + (box3[1] - box3[7]) / 2 + 67),
-                'Powered by Component17');
+            // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
+            //
+            // // // Center the message
+            // img.stringFT(epd.colors.black, font, 18, 0,
+            //     Math.round(width / 2 - (box4[4] - box4[6]) / 2 + 25),
+            //     Math.round(height / 2 + (box4[1] - box4[7]) / 2 + 25),
+            //     'Port: 3000');
+            //
+            // let box3 = img.stringFTBBox(epd.colors.black, rubikR, 12, 0, 0, 0, 'Powered by Component17');
+            //
+            // // // Center the message
+            // img.stringFT(epd.colors.black, rubikR, 12, 0,
+            //     Math.round(width / 2 - (box3[4] - box3[6]) / 2 + 25),
+            //     Math.round(height / 2 + (box3[1] - box3[7]) / 2 + 67),
+            //     'Powered by Component17');
 
 
 
