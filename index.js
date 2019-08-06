@@ -40,8 +40,6 @@ const refreshDisplay = message =>
                 170,
                 '連');
 
-            let test = ;
-
             // Retrieve bounding box of displayed string
             let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.black, font, 24, 0, 0, 0, 'Light Sorting');
 
