@@ -49,7 +49,7 @@ const refreshDisplay = message =>
             // // Center the message
             img.stringFT(epd.colors.black, font, 22, 0,
                 Math.round(width / 2 - (box1[4] - box1[6]) / 2 + 25),
-                Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 30),
+                Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 20),
                 'Light Sorting');
 
             let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, '192.168.177.777');
@@ -57,7 +57,7 @@ const refreshDisplay = message =>
             // // Center the message
             img.stringFT(epd.colors.black, font, 18, 0,
                 Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
-                Math.round(height / 2 + (box2[1] - box2[7]) / 2 + 10),
+                Math.round(height / 2 + (box2[1] - box2[7]) / 2),
                 '192.168.177.777');
 
             let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
@@ -65,7 +65,7 @@ const refreshDisplay = message =>
             // // Center the message
             img.stringFT(epd.colors.black, font, 18, 0,
                 Math.round(width / 2 - (box4[4] - box4[6]) / 2 + 25),
-                Math.round(height / 2 + (box4[1] - box4[7]) / 2 + 20),
+                Math.round(height / 2 + (box4[1] - box4[7]) / 2 + 30),
                 'Port: 3000');
 
             let box3 = img.stringFTBBox(epd.colors.black, rubikR, 12, 0, 0, 0, 'Powered by Component17');
