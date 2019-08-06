@@ -2,6 +2,8 @@ const epd = require('epd2in7b');
 const font = '/home/pi/epd/fonts/Montserrat-Bold.ttf';
 const mdi = '/home/pi/epd/fonts/mdi.ttf';
 const roboto = '/home/pi/epd/fonts/Roboto-Regular.ttf';
+const rubikB = '/home/pi/epd/fonts/Rubik-Bold.ttf';
+const rubikR = '/home/pi/epd/fonts/Rubik-Regular.ttf';
 const fontSize = 50
 
 const img = epd.getImageBuffer('landscape');
@@ -42,26 +44,26 @@ const refreshDisplay = message =>
                 '連');
 
             // Retrieve bounding box of displayed string
-            let box1 = img.stringFTBBox(epd.colors.black, font, 22, 0, 0, 0, 'Light Sorting');
+            let box1 = img.stringFTBBox(epd.colors.black, rubikB, 22, 0, 0, 0, 'Light Sorting');
 
             // // Center the message
-            img.stringFT(epd.colors.black, font, 22, 0,
+            img.stringFT(epd.colors.black, rubikB, 22, 0,
                 Math.round(width / 2 - (box1[4] - box1[6]) / 2 + 25),
                 Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 50),
                 'Light Sorting');
 
-            let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, '192.168.1.77:3000');
+            let box2 = img.stringFTBBox(epd.colors.black, rubikB, 18, 0, 0, 0, '192.168.1.77:3000');
 
             // // Center the message
-            img.stringFT(epd.colors.black, font, 18, 0,
+            img.stringFT(epd.colors.black, rubikB, 18, 0,
                 Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
                 Math.round(height / 2 + (box2[1] - box2[7]) / 2),
                 '192.168.1.77:3000');
 
-            let box3 = img.stringFTBBox(epd.colors.black, roboto, 12, 0, 0, 0, 'Powered by Component17');
+            let box3 = img.stringFTBBox(epd.colors.black, rubikR, 12, 0, 0, 0, 'Powered by Component17');
 
             // // Center the message
-            img.stringFT(epd.colors.black, roboto, 12, 0,
+            img.stringFT(epd.colors.black, rubikR, 12, 0,
                 Math.round(width / 2 - (box3[4] - box3[6]) / 2 + 25),
                 Math.round(height / 2 + (box3[1] - box3[7]) / 2 + 65),
                 'Powered by Component17');
