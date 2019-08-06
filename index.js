@@ -19,7 +19,7 @@ const refreshDisplay = message =>
             img.stringFT(epd.colors.black, mdi, 24, 0,
                 16,
                 36,
-                '');
+                '');
 
 
             img.rectangle(1, 45, 43, 89, epd.colors.black);
