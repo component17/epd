@@ -10,15 +10,21 @@ const fontSize = 50
 const img = epd.getImageBuffer('landscape');
 const width = epd.height
 const height = epd.width
-let epdp = epd.init({fastLut: true})
+let epdp = epd.init({fastLut: true});
 
-console.log(img)
+let gd = require('node-gd');
 
 const refreshDisplay = message =>
     epdp = epdp
     // init is required since we set it sleeping at the end of this chain
         .then(() => epd.init({fastLut: true}))
         .then(() => img.then(img => {
+
+            let qr = gd.createFromPng('./qr.png');
+
+            img.copy(qr, 0, 0, 0, 0, 100, 100);
+
+
             // display a black rectangle
             img.rectangle(1, 1, 43, 45, epd.colors.black);
 
