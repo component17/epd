@@ -10,7 +10,9 @@ const fontSize = 50
 const img = epd.getImageBuffer('landscape');
 const width = epd.height
 const height = epd.width
-let epdp = epd.init({fastLut: false})
+let epdp = epd.init({fastLut: true})
+
+console.log(img)
 
 const refreshDisplay = message =>
     epdp = epdp
