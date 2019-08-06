@@ -15,8 +15,18 @@ const refreshDisplay = message =>
             // display a black rectangle
             img.filledRectangle(
                 Math.round(0), Math.round(0),
-                Math.round(width), Math.round(height),
+                Math.round(56), Math.round(56),
                 epd.colors.black)
+
+            img.filledRectangle(
+                Math.round(0), Math.round(61),
+                Math.round(56), Math.round(56),
+                epd.colors.white)
+
+            img.filledRectangle(
+                Math.round(0), Math.round(122),
+                Math.round(56), Math.round(56),
+                epd.colors.white)
 
             // display a red rectangle
             img.filledRectangle(
