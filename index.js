@@ -17,8 +17,8 @@ const refreshDisplay = message =>
             img.rectangle(1, 1, 43, 45, epd.colors.black);
 
             img.stringFT(epd.colors.black, mdi, 26, 0,
-                6,
-                36,
+                4,
+                40,
                 '');
 
 
@@ -26,7 +26,7 @@ const refreshDisplay = message =>
             img.rectangle(1, 89, 43, 133, epd.colors.black);
             img.rectangle(1, 133, 43, 175, epd.colors.black);
 
-            console.log(img.stringFTBBox(epd.colors.white, font, 24, 0, 0, 0, ''));
+            console.log(img.stringFTBBox(epd.colors.white, font, 26, 0, 0, 0, ''));
 
             // display a red rectangle
             // img.filledRectangle(
