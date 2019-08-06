@@ -37,7 +37,7 @@ const refreshDisplay = message =>
         }))
         .then(() => epd.sleep())
 
-refreshDisplay("Hello world !")
+refreshDisplay("Привет мир!")
 
 // Handle buttons
 epd.buttons.handler.then(handler =>
