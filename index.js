@@ -12,14 +12,27 @@ const width = epd.height
 const height = epd.width
 let epdp = epd.init({fastLut: true});
 
+const bwipjs = require('bwip-js');
+
+
 let gd = require('node-gd');
 
 let getPng = () => {
     return new Promise((resolve, reject) => {
-        gd.openPng('./qr.png', (err, qr) => {
-            if(err) reject(err);
-            resolve(qr);
-        })
+        bwipjs.toBuffer({
+            bcid:        'code128',       // Barcode type
+            text:        '0123456789',    // Text to encode
+            scale:       3,               // 3x scaling factor
+            height:      10,              // Bar height, in millimeters
+            includetext: true,            // Show human-readable text
+            textxalign:  'center',        // Always good to set this
+        }, function (err, png) {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(png)
+            }
+        });
     })
 }
 
@@ -29,14 +42,7 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(async img => {
 
-            // try{
-            //     let qr = await getPng();
-            //
-            //     console.log(qr);
-            // }catch (e) {
-            //     return e
-            // }
-
+            let code = await getPng();
 
 
 
