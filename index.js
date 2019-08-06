@@ -102,7 +102,7 @@ const refreshDisplay = message =>
             code.alphaBlending(0);
             code.saveAlpha(0);
             code.negate();
-            code.copy(img, 70, 3, 0, 0, 200, 200);
+            code.copy(img, 70, 3, 0, 0, 170, 170);
 
             // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
             //
