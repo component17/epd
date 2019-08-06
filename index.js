@@ -10,7 +10,7 @@ let epdp = epd.init({fastLut: false})
 const refreshDisplay = message =>
     epdp = epdp
     // init is required since we set it sleeping at the end of this chain
-        .then(() => epd.init({fastLut: false}))
+        .then(() => epd.init({fastLut: true}))
         .then(() => img.then(img => {
             // display a black rectangle
             img.rectangle(5, 0, 56, 56, epd.colors.black);
