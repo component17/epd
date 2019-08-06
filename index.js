@@ -14,15 +14,21 @@ let epdp = epd.init({fastLut: true});
 
 let gd = require('node-gd');
 
+let getPng = () => {
+    return new Promise((resolve, reject) => {
+        gd.openPng('./qr.png', (err, qr) => {
+            resolve(qr);
+        })
+    })
+}
+
 const refreshDisplay = message =>
     epdp = epdp
     // init is required since we set it sleeping at the end of this chain
         .then(() => epd.init({fastLut: true}))
-        .then( () => img.then(img => {
+        .then( () => img.then(async img => {
 
-            gd.openPng('./qr.png', (err, qr) => {
-                console.log(err)
-            })
+            let qr = await getPng();
 
 
             // display a black rectangle
@@ -95,7 +101,7 @@ const refreshDisplay = message =>
 
 
 
-            return epd.displayImageBuffer(qr)
+            return epd.displayImageBuffer(img)
         }))
         .then(() => epd.sleep())
 
