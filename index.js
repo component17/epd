@@ -90,16 +90,16 @@ const refreshDisplay = message =>
             //     Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 60),
             //     'Light Sorting');
 
-            let box2 = img.stringFTBBox(epd.colors.black, qr, 18, 0, 0, 0, 'http://192.168.177.777:3000');
-
-            // // Center the message
-            img.stringFT(epd.colors.black, qr, 18, 0,
-                Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
-                Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
-                '192.168.177.777:3000');
+            // let box2 = img.stringFTBBox(epd.colors.black, qr, 18, 0, 0, 0, 'http://192.168.177.777:3000');
+            //
+            // // // Center the message
+            // img.stringFT(epd.colors.black, qr, 18, 0,
+            //     Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
+            //     Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
+            //     '192.168.177.777:3000');
 
 // copy watermark onto input, i.e. onto the destination
-            code.copy(img, 50, 50, 0, 0, 150, 150);
+            code.copy(img, 50, 5, 150, 150, 150, 150);
 
             // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
             //
