@@ -37,7 +37,7 @@ const refreshDisplay = message =>
         }))
         .then(() => epd.sleep())
 
-refreshDisplay("0");
+refreshDisplay(width + 'x' + height);
 
 // Handle buttons
 epd.buttons.handler.then(handler =>
