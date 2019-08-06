@@ -1,5 +1,6 @@
 const epd = require('epd2in7b');
 const font = '/home/pi/epd/fonts/Montserrat-Bold.ttf';
+const mdi = '/home/pi/epd/fonts/mdi.ttf';
 const fontSize = 50
 
 const img = epd.getImageBuffer('landscape');
@@ -15,10 +16,10 @@ const refreshDisplay = message =>
             // display a black rectangle
             img.rectangle(1, 1, 43, 45, epd.colors.black);
 
-            img.stringFT(epd.colors.black, font, 24, 0,
+            img.stringFT(epd.colors.black, mdi, 24, 0,
                 16,
                 36,
-                'i');
+                '');
 
 
             img.rectangle(1, 45, 43, 89, epd.colors.black);
