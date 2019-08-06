@@ -20,9 +20,9 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(img => {
 
-            gd.createFromPng('./qr.png').then(qr => {
-                console.log(qr)
-            });
+            gd.openPng('./qr.png', (err, qr) => {
+                console.log(err)
+            })
 
 
             // display a black rectangle
