@@ -13,7 +13,7 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: false}))
         .then(() => img.then(img => {
             // display a black rectangle
-            img.rectangle(0, 0, 56, 56, epd.colors.black);
+            img.rectangle(5, 0, 56, 56, epd.colors.black);
             img.filledRectangle(0, 61, 56, 118, epd.colors.black);
             img.filledRectangle(0, 122, 56, 176, epd.colors.black);
 
