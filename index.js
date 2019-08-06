@@ -5,7 +5,7 @@ const roboto = '/home/pi/epd/fonts/Roboto-Regular.ttf';
 const rubikB = '/home/pi/epd/fonts/Rubik-Bold.ttf';
 const rubikR = '/home/pi/epd/fonts/Rubik-Regular.ttf';
 const qr = '/home/pi/epd/fonts/qr.ttf';
-const fontSize = 50
+const fontSize = 50;
 
 const img = epd.getImageBuffer('landscape');
 const width = epd.height
@@ -17,7 +17,7 @@ let gd = require('node-gd');
 let getPng = () => {
     return new Promise((resolve, reject) => {
         gd.openPng('./qr.png', (err, qr) => {
-            if(err) return reject(err)
+            if(err) reject(err);
             resolve(qr);
         })
     })
@@ -29,13 +29,13 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(async img => {
 
-            try{
-                let qr = await getPng();
-
-                console.log(qr);
-            }catch (e) {
-                return e
-            }
+            // try{
+            //     let qr = await getPng();
+            //
+            //     console.log(qr);
+            // }catch (e) {
+            //     return e
+            // }
 
 
 
@@ -88,7 +88,7 @@ const refreshDisplay = message =>
             img.saveAlpha(1);
 
 // copy watermark onto input, i.e. onto the destination
-            //img.copy(qr, 0, 0, 0, 0, 100, 100);
+            img.copy(img, 0, 0, 0, 0, 100, 100);
 
             // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
             //
