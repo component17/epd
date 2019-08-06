@@ -17,6 +17,7 @@ let gd = require('node-gd');
 let getPng = () => {
     return new Promise((resolve, reject) => {
         gd.openPng('./qr.png', (err, qr) => {
+            if(err) return reject(err)
             resolve(qr);
         })
     })
@@ -101,7 +102,7 @@ const refreshDisplay = message =>
 
 
 
-            return epd.displayImageBuffer(img)
+            return epd.displayImageBuffer(qr)
         }))
         .then(() => epd.sleep())
 
