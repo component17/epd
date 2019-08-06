@@ -25,13 +25,13 @@ const refreshDisplay = message =>
             //     epd.colors.red)
 
             // Retrieve bounding box of displayed string
-            let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.white, font, fontSize, 0, 0, 0, message)
-
-            // Center the message
-            img.stringFT(epd.colors.white, font, fontSize, 0,
-                Math.round(width / 2 - (xur - xul) / 2),
-                Math.round(height / 2 + (yll - yul) / 2),
-                message)
+            // let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.white, font, fontSize, 0, 0, 0, message)
+            //
+            // // Center the message
+            // img.stringFT(epd.colors.white, font, fontSize, 0,
+            //     Math.round(width / 2 - (xur - xul) / 2),
+            //     Math.round(height / 2 + (yll - yul) / 2),
+            //     message)
 
             return epd.displayImageBuffer(img)
         }))
