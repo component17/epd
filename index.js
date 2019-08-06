@@ -113,6 +113,7 @@ const refreshDisplay = message =>
             return epd.displayImageBuffer(img)
         }))
         .then(() => epd.sleep())
+        .catch(e => console.log(e))
 
 refreshDisplay(width + 'x' + height);
 
