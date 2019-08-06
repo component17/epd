@@ -96,6 +96,7 @@ refreshDisplay(width + 'x' + height);
 epd.buttons.handler.then(handler =>
     handler.on('pressed', function (button) {
         let buttonLabel = 'none'
+        console.log(button)
         switch (button) {
             case epd.buttons.button1:
                 buttonLabel = 'first button'
