@@ -1,6 +1,6 @@
 const epd = require('epd2in7b');
 const font = '/home/pi/epd/fonts/Montserrat-Bold.ttf';
-const fontSize = 14
+const fontSize = 50
 
 const img = epd.getImageBuffer('landscape');
 const width = epd.height
@@ -37,7 +37,7 @@ const refreshDisplay = message =>
         }))
         .then(() => epd.sleep())
 
-refreshDisplay("Привет мир!")
+refreshDisplay("0");
 
 // Handle buttons
 epd.buttons.handler.then(handler =>
