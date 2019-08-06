@@ -29,7 +29,16 @@ const refreshDisplay = message =>
                 '');
 
             img.rectangle(1, 89, 43, 133, epd.colors.black);
+            img.stringFT(epd.colors.black, mdi, 24, 0,
+                6,
+                126,
+                'ﳛ');
+
             img.rectangle(1, 133, 43, 175, epd.colors.black);
+            img.stringFT(epd.colors.black, mdi, 24, 0,
+                6,
+                170,
+                '連');
 
             console.log(img.stringFTBBox(epd.colors.white, font, 26, 0, 0, 0, ''));
 
