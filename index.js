@@ -84,9 +84,6 @@ const refreshDisplay = message =>
                 Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
                 '192.168.177.777:3000');
 
-            img.alphaBlending(1);
-            img.saveAlpha(1);
-
 // copy watermark onto input, i.e. onto the destination
             img.copy(img, 50, 50, 0, 0, 100, 100);
 
