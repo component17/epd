@@ -41,10 +41,10 @@ const refreshDisplay = message =>
                 '連');
 
             // Retrieve bounding box of displayed string
-            let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.black, font, 24, 0, 0, 0, 'Light Sorting');
+            let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Light Sorting');
 
             // // Center the message
-            img.stringFT(epd.colors.black, font, 24, 0,
+            img.stringFT(epd.colors.black, font, 18, 0,
                 Math.round(width / 2 - (xur - xul) / 2 + 43),
                 Math.round(height / 2 + (yll - yul) / 2),
                 'Light Sorting');
