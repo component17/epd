@@ -58,7 +58,7 @@ const refreshDisplay = message =>
             img.stringFT(epd.colors.black, font, 18, 0,
                 Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
                 Math.round(height / 2 + (box2[1] - box2[7]) / 2 + 15),
-                '192.168.1.77:3000');
+                '192.168.177.777:3000');
 
             let box3 = img.stringFTBBox(epd.colors.black, rubikR, 12, 0, 0, 0, 'Powered by Component17');
 
