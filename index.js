@@ -1,6 +1,6 @@
 const epd = require('epd2in7b');
-const font = '/home/pi/epd/fonts/Roboto-Regular.ttf';
-const fontSize = 12
+const font = '/home/pi/epd/fonts/Montserrat-Bold.ttf';
+const fontSize = 14
 
 const img = epd.getImageBuffer('landscape');
 const width = epd.height
