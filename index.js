@@ -40,7 +40,16 @@ const refreshDisplay = message =>
                 170,
                 '連');
 
-            console.log(img.stringFTBBox(epd.colors.white, font, 26, 0, 0, 0, ''));
+            let test = ;
+
+            // Retrieve bounding box of displayed string
+            let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.black, font, 24, 0, 0, 0, 'Light Sorting');
+
+            // // Center the message
+            img.stringFT(epd.colors.white, font, fontSize, 0,
+                Math.round(width / 2 - (xur - xul) / 2 + 43),
+                Math.round(height / 2 + (yll - yul) / 2),
+                'Light Sorting');
 
             // display a red rectangle
             // img.filledRectangle(
@@ -48,14 +57,7 @@ const refreshDisplay = message =>
             //     Math.round(3 * width / 4), Math.round(3 * height / 4),
             //     epd.colors.red)
 
-            // Retrieve bounding box of displayed string
-            // let [xll, yll, xlr, ylr, xur, yur, xul, yul] = img.stringFTBBox(epd.colors.white, font, fontSize, 0, 0, 0, message)
-            //
-            // // Center the message
-            // img.stringFT(epd.colors.white, font, fontSize, 0,
-            //     Math.round(width / 2 - (xur - xul) / 2),
-            //     Math.round(height / 2 + (yll - yul) / 2),
-            //     message)
+
 
             return epd.displayImageBuffer(img)
         }))
