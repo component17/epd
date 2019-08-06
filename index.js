@@ -50,6 +50,8 @@ const refreshDisplay = message =>
 
             let code = await getPng();
 
+            console.log(code)
+
 
 
             // display a black rectangle
