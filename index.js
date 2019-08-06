@@ -99,8 +99,8 @@ const refreshDisplay = message =>
             //     '192.168.177.777:3000');
 
 // copy watermark onto input, i.e. onto the destination
-            code.alphaBlending(1);
-            code.saveAlpha(1);
+            code.alphaBlending(0);
+            code.saveAlpha(0);
             code.copy(img, 50, 5, 50, 50, 200, 200);
 
             // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
