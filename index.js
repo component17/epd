@@ -1,6 +1,7 @@
 const epd = require('epd2in7b');
 const font = '/home/pi/epd/fonts/Montserrat-Bold.ttf';
 const mdi = '/home/pi/epd/fonts/mdi.ttf';
+const roboto = '/home/pi/epd/fonts/Roboto-Regular.ttf';
 const fontSize = 50
 
 const img = epd.getImageBuffer('landscape');
@@ -57,13 +58,13 @@ const refreshDisplay = message =>
                 Math.round(height / 2 + (box2[1] - box2[7]) / 2),
                 '192.168.1.77:3000');
 
-            let box3 = img.stringFTBBox(epd.colors.black, font, 14, 0, 0, 0, 'Powered \n by Component17');
+            let box3 = img.stringFTBBox(epd.colors.black, roboto, 10, 0, 0, 0, 'Powered by Component17');
 
             // // Center the message
-            img.stringFT(epd.colors.black, font, 14, 0,
+            img.stringFT(epd.colors.black, roboto, 10, 0,
                 Math.round(width / 2 - (box3[4] - box3[6]) / 2 + 25),
                 Math.round(height / 2 + (box3[1] - box3[7]) / 2 + 50),
-                'Powered \n by Component17');
+                'Powered by Component17');
 
 
 
