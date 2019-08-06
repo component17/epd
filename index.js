@@ -101,7 +101,7 @@ const refreshDisplay = message =>
 // copy watermark onto input, i.e. onto the destination
             code.alphaBlending(1);
             code.saveAlpha(1);
-            code.copy(img, 50, 5, 10, 10, 200, 150);
+            code.copy(img, 50, 5, 10, 10, 0, 0);
 
             // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
             //
