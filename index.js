@@ -160,7 +160,7 @@ const refreshDisplay = message =>
             let screen = screenHome(img);
 
             if(message === 'qr'){
-                screen = screenQr(img)
+                screen = await screenQr(img)
             }
 
             //let code = await getPng();
