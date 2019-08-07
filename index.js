@@ -158,8 +158,6 @@ const refreshDisplay = message =>
 
             let screen = img;
 
-            screen.destroy()
-
             if(message === 'qr'){
                 screen = await screenQr(img)
             }else {
