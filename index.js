@@ -44,9 +44,9 @@ let getPng = () => {
 
 let screenHome = (img) => {
     // display a black rectangle
-    img.rectangle(1, 1, 43, 45, epd.colors.black);
+    img.filledRectangle(1, 1, 43, 45, epd.colors.black);
 
-    img.stringFT(epd.colors.black, mdi, 26, 0,
+    img.stringFT(epd.colors.white, mdi, 26, 0,
         5,
         41,
         '');
