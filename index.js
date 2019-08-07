@@ -45,7 +45,7 @@ let screenHome = (img) => {
     // display a black rectangle
     img.filledRectangle(1, 1, 43, 45, epd.colors.black);
 
-    img.stringFT(epd.colors.white, mdi, 26, 0,
+    img.stringFT(epd.colors.red, mdi, 26, 0,
         5,
         41,
         '');
@@ -123,7 +123,7 @@ screenQr = async (img) => {
 
 
     img.filledRectangle(1, 45, 43, 89, epd.colors.black);
-    img.stringFT(epd.colors.white, mdi, 24, 0,
+    img.stringFT(epd.colors.red, mdi, 24, 0,
         6,
         84,
         '');
