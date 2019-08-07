@@ -166,7 +166,10 @@ const refreshDisplay = message =>
 
             return epd.displayImageBuffer(screen)
         }))
-        .then(() => epd.sleep())
+        .then(() => {
+            epd.sleep();
+            img.destroy()
+        })
         .catch(e => console.log(e))
 
 refreshDisplay('home');
