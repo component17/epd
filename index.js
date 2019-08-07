@@ -168,7 +168,7 @@ const refreshDisplay = message =>
         }))
         .then(() => {
             epd.sleep();
-            img.destroy()
+            img.then(img => img.destroy())
         })
         .catch(e => console.log(e))
 
