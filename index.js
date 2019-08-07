@@ -153,7 +153,7 @@ screenQr = async (img) => {
 const refreshDisplay = message =>
     epdp = epdp
     // init is required since we set it sleeping at the end of this chain
-        .then(() => epd.init({fastLut: true}))
+        .then(() => epd.init({fastLut: false}))
         .then( () => img.then(async img => {
 
             let screen = img;
