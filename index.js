@@ -160,15 +160,17 @@ const refreshDisplay = message =>
 
             if(message === 'qr'){
                 screen = await screenQr(img)
+                console.log(555)
             }else {
                 screen = screenHome(img)
+                console.log(666)
+
             }
 
             return epd.displayImageBuffer(screen)
         }))
         .then(() => {
             epd.sleep();
-            img.then(img => img.destroy())
         })
         .catch(e => console.log(e))
 
