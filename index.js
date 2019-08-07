@@ -156,6 +156,8 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(async img => {
 
+            img.destroy();
+
             let screen = img;
 
             if(message === 'qr'){
