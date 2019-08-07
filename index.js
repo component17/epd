@@ -78,12 +78,12 @@ let screenHome = (img) => {
         Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 60),
         'Light Sorting');
 
-    let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
+    let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, '192.168.1.77');
 
     img.stringFT(epd.colors.black, font, 18, 0,
         Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
         Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
-        'Port: 3000');
+        '192.168.1.77');
 
 // copy watermark onto input, i.e. onto the destination
 //     code.alphaBlending(0);
