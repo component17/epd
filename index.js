@@ -20,7 +20,6 @@ let gd = require('node-gd');
 let getPng = () => {
     return new Promise((resolve, reject) => {
         gd.openPng('./qr.png', (err, data) => {
-            console.log(data)
             resolve(data)
         })
     })
