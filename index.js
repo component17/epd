@@ -155,7 +155,7 @@ epd.buttons.handler.then(handler =>
             default:
                 buttonLabel = 'an unknown button'
         }
-        refreshDisplay(`You pressed \n${buttonLabel}`)
+        console.log(`You pressed \n${buttonLabel}`)
     })
 )
 
