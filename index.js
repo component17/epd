@@ -42,95 +42,92 @@ let getPng = () => {
     // })
 }
 
+let screenHome = (img) => {
+    // display a black rectangle
+    img.rectangle(1, 1, 43, 45, epd.colors.black);
+
+    img.stringFT(epd.colors.black, mdi, 26, 0,
+        5,
+        41,
+        '');
+
+
+    img.rectangle(1, 45, 43, 89, epd.colors.black);
+    img.stringFT(epd.colors.black, mdi, 24, 0,
+        6,
+        84,
+        '');
+
+    img.rectangle(1, 89, 43, 133, epd.colors.black);
+    img.stringFT(epd.colors.black, mdi, 24, 0,
+        6,
+        126,
+        'ﳛ');
+
+    img.rectangle(1, 133, 43, 175, epd.colors.black);
+    img.stringFT(epd.colors.black, mdi, 24, 0,
+        6,
+        170,
+        '連');
+
+    let box1 = img.stringFTBBox(epd.colors.black, font, 22, 0, 0, 0, 'Light Sorting');
+
+    // // Center the message
+    img.stringFT(epd.colors.black, font, 22, 0,
+        Math.round(width / 2 - (box1[4] - box1[6]) / 2 + 25),
+        Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 60),
+        'Light Sorting');
+
+    let box2 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
+
+    img.stringFT(epd.colors.black, font, 18, 0,
+        Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
+        Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
+        'Port: 3000');
+
+// copy watermark onto input, i.e. onto the destination
+//     code.alphaBlending(0);
+//     code.saveAlpha(0);
+//     code.negate();
+//     code.copy(img, 70, 3, 0, 0, 170, 170);
+
+    let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
+
+    // // Center the message
+    img.stringFT(epd.colors.black, font, 18, 0,
+        Math.round(width / 2 - (box4[4] - box4[6]) / 2 + 25),
+        Math.round(height / 2 + (box4[1] - box4[7]) / 2 + 25),
+        'Port: 3000');
+
+    let box3 = img.stringFTBBox(epd.colors.black, rubikR, 12, 0, 0, 0, 'Powered by Component17');
+
+    // // Center the message
+    img.stringFT(epd.colors.black, rubikR, 12, 0,
+        Math.round(width / 2 - (box3[4] - box3[6]) / 2 + 25),
+        Math.round(height / 2 + (box3[1] - box3[7]) / 2 + 67),
+        'Powered by Component17');
+
+
+
+    // display a red rectangle
+    // img.filledRectangle(
+    //     Math.round(width / 4), Math.round(height / 4),
+    //     Math.round(3 * width / 4), Math.round(3 * height / 4),
+    //     epd.colors.red)
+    return img;
+}
+
 const refreshDisplay = message =>
     epdp = epdp
     // init is required since we set it sleeping at the end of this chain
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(async img => {
 
-            let code = await getPng();
+            let screen = screenHome(img);
 
-            console.log(code)
+            //let code = await getPng();
 
-
-
-            // display a black rectangle
-            img.rectangle(1, 1, 43, 45, epd.colors.black);
-
-            img.stringFT(epd.colors.black, mdi, 26, 0,
-                5,
-                41,
-                '');
-
-
-            img.rectangle(1, 45, 43, 89, epd.colors.black);
-            img.stringFT(epd.colors.black, mdi, 24, 0,
-                6,
-                84,
-                '');
-
-            img.rectangle(1, 89, 43, 133, epd.colors.black);
-            img.stringFT(epd.colors.black, mdi, 24, 0,
-                6,
-                126,
-                'ﳛ');
-
-            img.rectangle(1, 133, 43, 175, epd.colors.black);
-            img.stringFT(epd.colors.black, mdi, 24, 0,
-                6,
-                170,
-                '連');
-
-            // Retrieve bounding box of displayed string
-            // let box1 = img.stringFTBBox(epd.colors.black, font, 22, 0, 0, 0, 'Light Sorting');
-            //
-            // // // Center the message
-            // img.stringFT(epd.colors.black, font, 22, 0,
-            //     Math.round(width / 2 - (box1[4] - box1[6]) / 2 + 25),
-            //     Math.round(height / 2 + (box1[1] - box1[7]) / 2 - 60),
-            //     'Light Sorting');
-
-            // let box2 = img.stringFTBBox(epd.colors.black, qr, 18, 0, 0, 0, 'http://192.168.177.777:3000');
-            //
-            // // // Center the message
-            // img.stringFT(epd.colors.black, qr, 18, 0,
-            //     Math.round(width / 2 - (box2[4] - box2[6]) / 2 + 25),
-            //     Math.round(height / 2 + (box2[1] - box2[7]) / 2 - 5),
-            //     '192.168.177.777:3000');
-
-// copy watermark onto input, i.e. onto the destination
-            code.alphaBlending(0);
-            code.saveAlpha(0);
-            code.negate();
-            code.copy(img, 70, 3, 0, 0, 170, 170);
-
-            // let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
-            //
-            // // // Center the message
-            // img.stringFT(epd.colors.black, font, 18, 0,
-            //     Math.round(width / 2 - (box4[4] - box4[6]) / 2 + 25),
-            //     Math.round(height / 2 + (box4[1] - box4[7]) / 2 + 25),
-            //     'Port: 3000');
-            //
-            // let box3 = img.stringFTBBox(epd.colors.black, rubikR, 12, 0, 0, 0, 'Powered by Component17');
-            //
-            // // // Center the message
-            // img.stringFT(epd.colors.black, rubikR, 12, 0,
-            //     Math.round(width / 2 - (box3[4] - box3[6]) / 2 + 25),
-            //     Math.round(height / 2 + (box3[1] - box3[7]) / 2 + 67),
-            //     'Powered by Component17');
-
-
-
-            // display a red rectangle
-            // img.filledRectangle(
-            //     Math.round(width / 4), Math.round(height / 4),
-            //     Math.round(3 * width / 4), Math.round(3 * height / 4),
-            //     epd.colors.red)
-
-
-
-            return epd.displayImageBuffer(img)
+            return epd.displayImageBuffer(screen)
         }))
         .then(() => epd.sleep())
         .catch(e => console.log(e))
