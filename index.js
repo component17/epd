@@ -157,15 +157,13 @@ const refreshDisplay = message =>
         .then(() => epd.init({fastLut: true}))
         .then( () => img.then(async img => {
 
-            let screen = null;
+            let screen = img;
 
             if(message === 'qr'){
                 screen = await screenQr(img)
             }else {
                 screen = screenHome(img)
             }
-
-            //let code = await getPng();
 
             return epd.displayImageBuffer(screen)
         }))
