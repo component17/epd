@@ -86,10 +86,7 @@ let screenHome = (img) => {
         '192.168.1.77');
 
 // copy watermark onto input, i.e. onto the destination
-//     code.alphaBlending(0);
-//     code.saveAlpha(0);
-//     code.negate();
-//     code.copy(img, 70, 3, 0, 0, 170, 170);
+
 
     let box4 = img.stringFTBBox(epd.colors.black, font, 18, 0, 0, 0, 'Port: 3000');
 
@@ -115,6 +112,43 @@ let screenHome = (img) => {
     //     Math.round(3 * width / 4), Math.round(3 * height / 4),
     //     epd.colors.red)
     return img;
+};
+
+screenQr = async (img) => {
+    img.rectangle(1, 1, 43, 45, epd.colors.black);
+
+    img.stringFT(epd.colors.black, mdi, 26, 0,
+        5,
+        41,
+        '');
+
+
+    img.filledRectangle(1, 45, 43, 89, epd.colors.black);
+    img.stringFT(epd.colors.white, mdi, 24, 0,
+        6,
+        84,
+        '');
+
+    img.rectangle(1, 89, 43, 133, epd.colors.black);
+    img.stringFT(epd.colors.black, mdi, 24, 0,
+        6,
+        126,
+        'ﳛ');
+
+    img.rectangle(1, 133, 43, 175, epd.colors.black);
+    img.stringFT(epd.colors.black, mdi, 24, 0,
+        6,
+        170,
+        '連');
+
+    let code = await getPng();
+
+    code.alphaBlending(0);
+    code.saveAlpha(0);
+    code.negate();
+    code.copy(img, 70, 3, 0, 0, 170, 170);
+
+    return img;
 }
 
 const refreshDisplay = message =>
@@ -125,6 +159,10 @@ const refreshDisplay = message =>
 
             let screen = screenHome(img);
 
+            if(message === 'qr'){
+                screen = screenQr(img)
+            }
+
             //let code = await getPng();
 
             return epd.displayImageBuffer(screen)
@@ -132,7 +170,7 @@ const refreshDisplay = message =>
         .then(() => epd.sleep())
         .catch(e => console.log(e))
 
-refreshDisplay(width + 'x' + height);
+refreshDisplay('home');
 
 // Handle buttons
 epd.buttons.handler.then(handler =>
@@ -141,10 +179,10 @@ epd.buttons.handler.then(handler =>
         console.log(button)
         switch (button) {
             case epd.buttons.button1:
-                buttonLabel = 'first button'
+                buttonLabel = 'home'
                 break
             case epd.buttons.button2:
-                buttonLabel = 'second button'
+                buttonLabel = 'qr'
                 break
             case epd.buttons.button3:
                 buttonLabel = 'third button'
@@ -155,7 +193,8 @@ epd.buttons.handler.then(handler =>
             default:
                 buttonLabel = 'an unknown button'
         }
-        console.log(`You pressed \n${buttonLabel}`)
+        console.log(`You pressed \n${buttonLabel}`);
+        refreshDisplay(buttonLabel)
     })
 )
 
